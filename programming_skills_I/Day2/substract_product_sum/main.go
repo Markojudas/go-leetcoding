@@ -21,8 +21,25 @@ func substractProductAndSum(n int) int {
 	return prod - sum
 }
 
+func solution(n int) int {
+	sum, prod := 0, 1
+
+	for n != 0 {
+		x := n % 10 // rightmost digit
+
+		sum += x
+		prod *= x
+
+		n /= 10 // stripping away the rightmost digit
+	}
+
+	return prod - sum
+}
+
 func main() {
 
 	fmt.Println(substractProductAndSum(234))
 	fmt.Println(substractProductAndSum(4421))
+	fmt.Println(solution(234))
+	fmt.Println(solution(4421))
 }
