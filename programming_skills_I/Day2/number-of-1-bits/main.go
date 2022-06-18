@@ -4,8 +4,14 @@ import "fmt"
 
 // solution
 func hammingWeight(num uint32) int {
+
+	// variable to "count" the number of 1's
 	var count int
+
+	// variable to go over the 32 bits (unsigned)
 	i := 0
+
+	// variable to perform the AND operation (bit manipulation)
 	var mask uint32 = 1
 
 	for i < 32 {
@@ -13,7 +19,7 @@ func hammingWeight(num uint32) int {
 			count++
 		}
 
-		mask <<= 1
+		mask <<= 1 //shifting one position to the left
 		i++
 	}
 
