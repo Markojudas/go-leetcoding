@@ -13,7 +13,8 @@ The **Manhattan distance** between two points <code>(x<sub>1</sub>, y<sub>1</sub
 <pre><code><strong>Input:          x = 3, y = 4, points = [[1,2],[3,1],[2,4],[2,3],[4,4]]</strong>
 <strong>Output:</strong>         2
 <strong>Explanation:</strong>    Of all the points, only [3,1], [2,4] and [4,4] are valid. Of the valid points, [2,4] and [4,4]
-have the smallest Manhattan distance from your current location, with a distance of 1. [2,4] has the smallest index, so return 2.</code></pre>
+have the smallest Manhattan distance from your current location, with a distance of 1. [2,4] has the smallest index,
+so return 2.</code></pre>
 
 **Example 2:**
 
