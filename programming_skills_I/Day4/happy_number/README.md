@@ -27,7 +27,7 @@ Return `true` if `n` is a happy number, and `false` if not.
 **Example 2:**
 
 <pre><code><strong>Input:          n = 2</strong>
-<strong>Output:</strong>         false</pre>
+<strong>Output:</strong>         false</code></pre>
 
 **Constraints:**
 
