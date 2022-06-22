@@ -4,14 +4,11 @@ import "fmt"
 
 func moveZeroes(nums []int) {
 	//first create variables to help
-	numsOfZeroes := 0
 	i := 0
 
 	//identify the zeroes while placing the non-zero values in in their place
 	for _, val := range nums {
-		if val == 0 {
-			numsOfZeroes++
-		} else {
+		if val != 0 {
 			nums[i] = val
 			i++
 		}
