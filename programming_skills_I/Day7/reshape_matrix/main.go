@@ -31,26 +31,35 @@ func (c *customQueue) Front() (int, error) {
 }
 
 func matrixReshape(mat [][]int, r int, c int) [][]int {
-	res := make([][]int, r)
 
-	for i := 0; i < r; i++ {
-		res[i] = make([]int, c)
-	}
-
+	//	making sure the request is possible and legal
 	if len(mat) == 0 || r*c != len(mat)*len(mat[0]) {
 		return mat
 	}
 
+	// START:
+	// creating a 2D int slice with r rows
+	res := make([][]int, r)
+
+	// initiating C columns for each row
+	for i := 0; i < r; i++ {
+		res[i] = make([]int, c)
+	}
+	// END
+
+	// creating a Queue
 	customeQueue := &customQueue{
 		queue: []int{},
 	}
 
+	// adding each int from the matrix to the queue in order traversal
 	for i := 0; i < len(mat); i++ {
 		for j := 0; j < len(mat[0]); j++ {
 			customeQueue.Enqueue(mat[i][j])
 		}
 	}
 
+	// popping the queue into the 2D int slice
 	for i := 0; i < r; i++ {
 		for j := 0; j < c; j++ {
 			val, _ := customeQueue.Front()
