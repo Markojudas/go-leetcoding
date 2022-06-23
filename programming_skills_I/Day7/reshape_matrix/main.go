@@ -68,6 +68,24 @@ func matrixReshape(mat [][]int, r int, c int) [][]int {
 		}
 	}
 
+	//without using a queue; just creating a slice and appending with he values of the matrix
+	/* 	tempSlice := []int{}
+
+	   	for i := 0; i < len(mat); i++ {
+	   		for j := 0; j < len(mat[0]); j++ {
+	   			tempSlice = append(tempSlice, mat[i][j])
+	   		}
+	   	}
+
+	   	tempIdx := 0
+
+	   	for i := 0; i < r; i++ {
+	   		for j := 0; j < c; j++ {
+	   			res[i][j] = tempSlice[tempIdx]
+	   			tempIdx++
+	   		}
+	   	}
+	*/
 	return res
 }
 
