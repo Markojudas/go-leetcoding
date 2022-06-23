@@ -9,7 +9,7 @@ type customQueue struct {
 	queue []int
 }
 
-func (c *customQueue) Enqueue(item int) {
+func (c *customQueue) Queue(item int) {
 	c.queue = append(c.queue, item)
 }
 
@@ -22,7 +22,7 @@ func (c *customQueue) Dequeue() error {
 	return fmt.Errorf("error popping queue")
 }
 
-func (c *customQueue) Front() (int, error) {
+func (c *customQueue) Peek() (int, error) {
 	if len(c.queue) > 0 {
 		return c.queue[0], nil
 	}
@@ -55,14 +55,14 @@ func matrixReshape(mat [][]int, r int, c int) [][]int {
 	// adding each int from the matrix to the queue in order traversal
 	for i := 0; i < len(mat); i++ {
 		for j := 0; j < len(mat[0]); j++ {
-			customeQueue.Enqueue(mat[i][j])
+			customeQueue.Queue(mat[i][j])
 		}
 	}
 
 	// popping the queue into the 2D int slice
 	for i := 0; i < r; i++ {
 		for j := 0; j < c; j++ {
-			val, _ := customeQueue.Front()
+			val, _ := customeQueue.Peek()
 			customeQueue.Dequeue()
 			res[i][j] = val
 		}
