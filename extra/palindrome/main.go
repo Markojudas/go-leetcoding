@@ -53,6 +53,6 @@ func isPalindrome(str string) bool {
 
 func main() {
 
-	fmt.Println(isPalindrome("Race car!!!!!"))
+	fmt.Println(isPalindrome("___Race car___"))
 	fmt.Println(isPalindrome("Hello"))
 }
