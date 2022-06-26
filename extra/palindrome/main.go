@@ -29,7 +29,7 @@ func isPalindrome(str string) bool {
 		}
 
 		if unicode.IsUpper(rightChar) {
-			rightChar = rightChar - 32
+			rightChar = rightChar + 32
 		}
 
 		if leftChar != rightChar {
