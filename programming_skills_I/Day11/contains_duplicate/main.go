@@ -26,13 +26,17 @@ func containsDuplicateMap(nums []int) bool {
 
 	for _, val := range nums {
 		numsMap[val]++
-	}
 
-	for key := range numsMap {
-		if numsMap[key] > 1 {
+		if numsMap[val] > 1 {
 			return true
 		}
 	}
+
+	/* 	for key := range numsMap {
+		if numsMap[key] > 1 {
+			return true
+		}
+	} */
 
 	return false
 }
