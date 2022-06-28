@@ -33,5 +33,5 @@ numArray.sumRange(0, 5); // return (-2) + 0 + 3 + (-5) + 2 + (-1) = -3</code></p
     <li><code>1 <= nums.length <= 10<sup>4</sup></code></li>
     <li><code>-10<sup>5</sup> <= nums[i] <= 10<sup>5</sup></code></li>    
     <li><code>0 <= left <= right < nums.length</code></li>
-    <li>At most <code>10<sup>4</sup> calls will be made to <code>sumRange</code>.</li>    
+    <li>At most <code>10<sup>4</sup></code> calls will be made to <code>sumRange</code>.</li>    
 </ul>
