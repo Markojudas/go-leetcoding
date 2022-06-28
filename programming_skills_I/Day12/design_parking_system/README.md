@@ -30,6 +30,6 @@ parkingSystem.addCar(1); // return false because there is no available slot for 
 
 <ul>
     <li><code>0 <= big, medium, small <= 1000</code></li>
-    <li><code>carType</coe> is <code>1</code>, <code>2</code>, or <code>3</code></li>
+    <li><code>carType</code> is <code>1</code>, <code>2</code>, or <code>3</code></li>
     <li>At most <code>1000</code> calls will be made to <code>addCar</code></li>
 </ul>
