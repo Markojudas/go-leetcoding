@@ -20,7 +20,7 @@ func (mq *MyQueue) Push(x int) {
 	mq.list = append(mq.list, x)
 }
 
-func (mq *MyQueue) pop() int {
+func (mq *MyQueue) Pop() int {
 
 	elem := mq.Peek()
 
@@ -48,6 +48,6 @@ func main() {
 	obj.Push(2) // null
 
 	fmt.Println(obj.Peek())  //1
-	fmt.Println(obj.pop())   //1
+	fmt.Println(obj.Pop())   //1
 	fmt.Println(obj.Empty()) //false
 }
