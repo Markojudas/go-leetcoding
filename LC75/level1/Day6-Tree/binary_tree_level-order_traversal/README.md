@@ -10,7 +10,7 @@ Given the `root` of a binary tree, return the level order traversal of its nodes
 <img src="./img/example1.png">
 
 <pre><code><strong>Input:</strong>     root = [3,9,20,null,null,15,7]
-<strong>Output:</strong>    [[3],[9,20],[15,7]]
+<strong>Output:</strong>    [[3],[9,20],[15,7]]</code></pre>
 
 **Example 2:**
 
