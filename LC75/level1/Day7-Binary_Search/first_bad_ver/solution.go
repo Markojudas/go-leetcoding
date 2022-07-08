@@ -1,31 +1,29 @@
 package main
 
-type versions struct {
-	state []bool
+type product struct {
+	states []bool
 }
 
-var versionStates versions
+var prod product
 
+// returning true if false; false otherwise
 func isBadVersion(version int) bool {
 
-	return versionStates.state[version]
+	return !prod.states[version]
 
 }
 
 //helper function to set the test case
-func constructor(setBad, n int) {
+func constructor(firstBadVer, n int) {
 
-	versionStates = versions{
-		state: make([]bool, n+1), //plus one because it includes n
-	}
+	prod.states = make([]bool, n+1)
 
-	idx := 0
-
-	for idx < n+1 {
-		if idx >= setBad {
-			versionStates.state[idx] = true //from this index onward we have bad versions.
+	for ver := range prod.states {
+		if ver < firstBadVer {
+			prod.states[ver] = true //setting the states; true = good, false(default) = bad
+		} else if ver == firstBadVer {
+			break
 		}
-		idx++
 	}
 }
 
