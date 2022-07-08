@@ -19,7 +19,7 @@ You must write an algorithm with `O(log n)` runtime complexity.
 
 <pre><code><strong>Input:</strong>          nums = [-1,0,3,5,9,12], target = 2
 <strong>Output:</strong>         -1
-<strong>Explanation:</strong>    2 does not exist in nums so return -1/code></pre>
+<strong>Explanation:</strong>    2 does not exist in nums so return -1/code></code></pre>
 <br>
 <br>
 
