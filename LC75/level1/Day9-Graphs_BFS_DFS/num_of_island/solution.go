@@ -1,24 +1,48 @@
 package main
 
-func numIslands(grid [][]byte) int {
+//perform DFS
+func dfs(grid [][]byte, row, col int) {
+	nRow := len(grid)
+	nCol := len(grid[0])
 
-	//if the grid is nil or size 0 return 0
-	if grid == nil || len(grid) == 0 {
+	//keeping bounds and whether we entered a visited cell
+	if row < 0 || col < 0 || row >= nRow || col >= nCol || grid[row][col] == '0' {
+		return
+	}
+
+	//mark as visited
+	grid[row][col] = '0'
+
+	//recursion : visiting neighbors
+	dfs(grid, row-1, col)
+	dfs(grid, row+1, col)
+	dfs(grid, row, col-1)
+	dfs(grid, row, col+1)
+}
+
+func numIslands(grid [][]byte) int {
+	//if grid is nil or size 0 then return 0
+	if len(grid) == 0 {
 		return 0
 	}
 
-	numRow := len(grid)
-	numCol := len(grid[0])
-	num_island := 0
-	r, c := 0, 0
-	//traverse through rows
-	for r < numRow {
+	//
+	nRow := len(grid)
+	nCol := len(grid[0])
 
-		//traverse through col
-		for c < numCol {
-			num_island++
-			grid[r][c] = '0' //mark as visited
-			neighbors := []int{}
+	num_islands := 0
+
+	//traverse through the grid
+	for r := 0; r < nRow; r++ {
+		for c := 0; c < nCol; c++ {
+
+			//identify the DFS trigger
+			if grid[r][c] == '1' {
+				num_islands++
+				dfs(grid, r, c)
+			}
 		}
 	}
+
+	return num_islands
 }
