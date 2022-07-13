@@ -14,3 +14,22 @@ An **Anagram** is a word or phrase formed by rearranging the letters f a differe
 <strong>Explanation:</strong>
 The substring with start index = 0 is "cba", which is an anagram of "abc".
 The substring with start index = 6 is "bac", which is an anagram of "abc".</code></pre>
+<br>
+
+**Example 2:**
+
+<pre><code><strong>Input:</strong>         s = "abab", p = "ab"
+<strong>Output:</strong>        [0,1,2]
+<strong>Explanation:</strong>
+The substring with start index = 0 is "ab", which is an anagram of "ab".
+The substring with start index = 1 is "ba", which is an anagram of "ab".
+The substring with start index = 2 is "ab", which is an anagram of "ab".</code></pre>
+<br>
+<br>
+
+**Constraints:**
+
+<ul>
+    <li><code>1 <= s.length, p.length <= 3 * 10<sup>4</sup></code></li>
+    <li><code>s</code> and <code>p</code> consist of lowercase English letters.</li>
+</ul>
