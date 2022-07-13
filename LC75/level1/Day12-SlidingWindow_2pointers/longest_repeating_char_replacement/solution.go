@@ -1,6 +1,6 @@
 package main
 
-func characterReplacements(s string, k int) int {
+func characterReplacement(s string, k int) int {
 	count := make(map[byte]int, 26)
 
 	res := 0
