@@ -4,10 +4,8 @@ func uniquePaths(m int, n int) int {
 
 	//Create a 2D array/slice d[m][n] = number of paths
 	d := make([][]int, m)
-	rows := make([]int, m*n)
-	for i, startRow := 0, 0; i < m; i, startRow = i+1, startRow+n {
-		endRow := startRow + n
-		d[i] = rows[startRow:endRow:endRow]
+	for idx := range d {
+		d[idx] = make([]int, n)
 	}
 
 	//initiate all cells to 1
