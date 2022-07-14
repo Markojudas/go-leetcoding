@@ -8,8 +8,8 @@ func twoSum(nums []int, target int) []int {
 	for idx, val := range nums {
 
 		//check if the key (compliment = target - value): value has been mapped
-		if _, ok := hmap[target-val]; ok {
-			//return the nums[idx] and the value of the map as int slice
+		if _, mapped := hmap[target-val]; mapped {
+			//return the nums[idx] and the value of the map as int slice - go ok idiom
 			return []int{idx, hmap[target-val]}
 		}
 
