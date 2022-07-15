@@ -18,23 +18,23 @@ func pop(stack []byte) []byte {
 func intoEmptyTextEditor(str string) string {
 
 	// after all a string is a slice of bytes
-	tmpStr := make([]byte, 0, len(str)) //aka stack
+	stack := make([]byte, 0, len(str)) //aka stack
 
 	// range 1 character at a time
-	for _, val := range str {
+	for _, char := range str {
 
 		//if the char is NOT #
-		if val != '#' {
+		if char != '#' {
 			//append to the slice of bytes
-			tmpStr = push(tmpStr, val) //aka push
+			stack = push(stack, char) //aka push
 			//else, rework the length of temp Str to accommodate the deletion of #
 		} else {
-			tmpStr = pop(tmpStr) //aka pop
+			stack = pop(stack) //aka pop
 		}
 	}
 
 	//return the slice of bytes as a string
-	return string(tmpStr)
+	return string(stack)
 
 }
 
