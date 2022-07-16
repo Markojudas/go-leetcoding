@@ -51,8 +51,7 @@ func decodeString(s string) string {
 			}
 
 			//we have reached "[", and discard this character
-			newStack, _ := pop(stack)
-			stack = newStack
+			stack, _ = pop(stack)
 			base := 1
 			k := 0
 
