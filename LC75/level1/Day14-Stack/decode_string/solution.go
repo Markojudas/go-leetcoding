@@ -12,9 +12,9 @@ func push(stack []byte, char byte) []byte {
 	return stack
 }
 
-func peek(stack []byte) byte {
+func peek(stack []byte) rune {
 
-	return stack[len(stack)-1]
+	return rune(stack[len(stack)-1])
 }
 
 func pop(stack []byte) ([]byte, byte) {
@@ -34,6 +34,7 @@ func isEmpty(stack []byte) bool {
 func decodeString(s string) string {
 	// create stack
 	stack := []byte{}
+	var poppedChar byte
 
 	// range over the string
 	for idx := range s {
@@ -45,8 +46,7 @@ func decodeString(s string) string {
 
 			//we keep appending to the decodedString until we reach "["
 			for peek(stack) != '[' {
-				newStack, poppedChar := pop(stack)
-				stack = newStack
+				stack, poppedChar = pop(stack)
 				decodedString = append(decodedString, poppedChar)
 			}
 
@@ -56,15 +56,14 @@ func decodeString(s string) string {
 			k := 0
 
 			// let's get the value of K
-			for !isEmpty(stack) && unicode.IsDigit(rune(peek(stack))) {
-				newStack, poppedChar := pop(stack)
-				stack = newStack
+			for !isEmpty(stack) && unicode.IsDigit(peek(stack)) {
+				stack, poppedChar = pop(stack)
 				intChar, _ := strconv.Atoi(string(poppedChar))
 				k = k + intChar*base
 				base *= 10
 			}
 
-			//pushing the decoded string (reversed) to the stack
+			//pushing the decoded string (reversed) to the stack k times
 			for k != 0 {
 				for i := len(decodedString) - 1; i >= 0; i-- {
 					stack = push(stack, decodedString[i])
@@ -80,8 +79,7 @@ func decodeString(s string) string {
 	//let's build the result string by popping the stack
 	result := make([]byte, len(stack))
 	for idx := len(result) - 1; idx >= 0; idx-- {
-		newStack, poppedChar := pop(stack)
-		stack = newStack
+		stack, poppedChar = pop(stack)
 		result[idx] = poppedChar
 	}
 
